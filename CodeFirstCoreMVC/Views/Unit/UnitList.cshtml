@@ -1,0 +1,29 @@
+﻿
+@model IEnumerable<Unit>
+
+@{
+    ViewData["Title"] = "Unit List";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to list unit.</p>
+<p>
+    <a asp-action="AddUnit">Add New Unit</a>
+</p>
+<table class="table">
+    <tr>
+        <th>Number</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var std in Model)
+    {
+        <tr>
+            <td>@std.Id</td>
+            <td>@std.Code</td>
+            <td>@std.Name</td>
+            <td>@std.IsActive</td>            
+        </tr>
+    }
+</table>
